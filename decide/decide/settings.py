@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Especifica aqui tu UVUS
-UVUS = 'UVUS-to-Change'
+UVUS = 'davcacrom'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+APIS = {}
 # Application definition
 
 INSTALLED_APPS = [
@@ -73,7 +73,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+BASEURL = 'egc1230-davcacrom'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -163,6 +163,9 @@ STATIC_URL = '/static/'
 
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
+
+import django_heroku
+django_heroku.settings(locals())
 
 # Versioning
 ALLOWED_VERSIONS = ['v1', 'v2']
